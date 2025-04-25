@@ -1,4 +1,3 @@
-import React from 'react';
 import Container from '../shared/container';
 import Header from '../shared/header';
 import Image from 'next/image';
@@ -7,19 +6,27 @@ import greaterAccra from '@/public/tour/greater-accra.jpg';
 
 function TourLocations() {
   return (
-    <section className="mt-24">
+    <section className="">
       <Container>
         <Header title="tour locations" />
 
-        <div className="mt-5 bg-secondary rounded-2xl px-12 py-8 space-y-4 flex items-center justify-between gap-24">
-          <div className="w-1/2">
-            <Image src={img} alt="Map of Ghana" />
+        <div className="mt-5 bg-secondary rounded-2xl px-4 sm:px-6 md:px-8 lg:px-12 py-6 md:py-8 flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-24 overflow-hidden">
+          {/* Map Section */}
+          <div className="w-full lg:w-1/2 relative">
+            <Image
+              src={img}
+              alt="Map of Ghana"
+              className="object-contain"
+            />
           </div>
-          <div className="bg-white px-12 py-8 space-y-3 rounded-2xl w-1/2">
-            <h2 className="capitalize text-6xl font-bold">
+
+          {/* Content Section */}
+          <div className="bg-white px-4 sm:px-6 md:px-8 lg:px-12 py-6 md:py-8 space-y-3 md:space-y-4 rounded-2xl w-full lg:w-1/2">
+            <h2 className="capitalize text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               Greater Accra
             </h2>
-            <p>
+
+            <p className="md:text-lg text-gray-600">
               <span className="font-bold">Bead Making:</span>{' '}
               Alabaster Car Rentals & Tours Ltd, ACTL, your trusted
               partner for premier car rental and tour services in
@@ -31,11 +38,11 @@ function TourLocations() {
               Association of Ghana (CRAG).
             </p>
 
-            <div>
+            <div className="relative rounded-b-xl overflow-hidden">
               <Image
                 src={greaterAccra}
                 alt="Greater Accra Tour"
-                className="rounded-b-xl"
+                className="object-cover"
               />
             </div>
           </div>

@@ -8,12 +8,38 @@ import BackgroundImage from './BackgroundImage';
 
 function Testimonials() {
   const [activeDot, setActiveDot] = useState(0);
+  const [testimonialsPerSlide, setTestimonialsPerSlide] = useState(1);
   const scrollRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const totalDots = Math.ceil(testimonials.length / 2);
+  const totalDots = Math.ceil(
+    testimonials.length / testimonialsPerSlide
+  );
 
+  useEffect(() => {
+    // Set initial value on client-side
+    const handleResize = () => {
+      const newPerSlide = window.innerWidth < 768 ? 1 : 2;
+      setTestimonialsPerSlide(newPerSlide);
+
+      // Adjust active dot if needed
+      const newTotalDots = Math.ceil(
+        testimonials.length / newPerSlide
+      );
+      if (activeDot >= newTotalDots) {
+        setActiveDot(newTotalDots - 1);
+      }
+    };
+
+    // Initial call
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [activeDot]);
+
+  // Rest of the useEffect hooks remain the same
   useEffect(() => {
     const interval = setInterval(() => {
       if (!isHovered && scrollRef.current) {
@@ -40,10 +66,10 @@ function Testimonials() {
 
   return (
     <section
-      className="bg-black py-16 relative mt-24"
+      className="bg-black py-8 md:py-16 relative mt-12 md:mt-24"
       ref={containerRef}>
       <Container className="z-20 relative">
-        <div className="flex flex-col md:flex-row items-start gap-8 pl-14 py-20 bg-card-foreground rounded-2xl">
+        <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8 px-4 md:pl-14 py-8 md:py-20 bg-card-foreground rounded-2xl">
           <TestimonialHeader
             activeDot={activeDot}
             totalDots={totalDots}

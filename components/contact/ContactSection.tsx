@@ -6,7 +6,7 @@ import Info from './Info';
 
 function ContactSection() {
   return (
-    <section className="mt-20 px-4 sm:px-6 lg:px-8">
+    <section className="mt-20">
       <Container className="flex flex-col lg:flex-row items-stretch gap-8 lg:gap-12 xl:gap-16">
         <Form />
         <Info />

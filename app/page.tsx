@@ -10,7 +10,9 @@ function Home() {
       <Hero />
       <HelpBanner />
       <Stats />
-      <Fleet />
+      <div id="fleet">
+        <Fleet />
+      </div>
       <Testimonials />
     </main>
   );

@@ -4,12 +4,12 @@ import Header from '../shared/header';
 
 function CorporateServices() {
   return (
-    <section className="mt-32">
+    <section className="mt-16 md:mt-24 lg:mt-32">
       <Container>
-        <Header title="our expertise" />
+        <Header title="Corporate Shuttle Services" />
 
-        <div className="mt-5 bg-secondary rounded-2xl px-12 py-8 space-y-4">
-          <div className="bg-white px-12 py-8 space-y-3 rounded-2xl ">
+        <div className="mt-5 bg-secondary rounded-2xl px-4 sm:px-8 lg:px-12 py-6 sm:py-8  space-y-4">
+          <div className="bg-white p-6 sm:p-8 lg:p-12 space-y-3 rounded-2xl">
             <p>
               We offer Corporate Shuttle services, a one-stop
               transportation solution designed to meet the unique
@@ -31,7 +31,7 @@ function CorporateServices() {
               profitability.
             </p>
           </div>
-          <div className="bg-white px-12 py-8 space-y-3 rounded-2xl ">
+          <div className="bg-white p-6 sm:p-8 lg:p-12 space-y-3 rounded-2xl">
             <p>
               We facilitate convenient and reliable transportation for
               your employees with our shuttle service. Ensuring

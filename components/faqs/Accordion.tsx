@@ -10,7 +10,7 @@ import { faqItems } from '@/lib/data';
 
 function FAQAccordion() {
   return (
-    <Container className="mt-24">
+    <Container className=" md:mt-12 lg:mt-24">
       <Accordion
         type="single"
         collapsible

@@ -5,7 +5,9 @@ function Story() {
   return (
     <section>
       <Container className="mt-10">
-        <h2 className="capitalize text-6xl font-bold">our story</h2>
+        <h2 className="capitalize text-3xl md:text-5xl lg:text-6xl font-bold">
+          our story
+        </h2>
         <div className="mt-7 bg-secondary p-7 space-y-4 font-light rounded-2xl">
           <div className="bg-white p-4">
             <p>

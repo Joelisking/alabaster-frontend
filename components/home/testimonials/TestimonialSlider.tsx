@@ -20,7 +20,7 @@ function TestimonialSlider({
       onMouseLeave={() => setIsHovered(false)}>
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto scrollbar-hide pb-4 gap-4"
+        className="flex overflow-x-auto scrollbar-hide pb-4 gap-3 md:gap-4"
         style={{
           scrollSnapType: 'x mandatory',
           scrollbarWidth: 'none',
@@ -29,7 +29,7 @@ function TestimonialSlider({
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
-            className="flex-shrink-0 relative"
+            className="flex-shrink-0 relative w-full sm:w-[85%] md:w-[48%]"
             style={{
               scrollSnapAlign: 'start',
             }}>

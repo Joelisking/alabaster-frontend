@@ -4,9 +4,9 @@ import { HighlightsCarousel } from './HighlightsCarousel';
 
 function TourHighlights() {
   return (
-    <section>
+    <section className="mt-10">
       <Container>
-        <h2 className="capitalize text-6xl font-bold mt-6">
+        <h2 className="capitalize text-3xl md:text-5xl xl:text-6xl font-bold">
           tour highlights
         </h2>
 

@@ -6,12 +6,12 @@ import img from '@/public/expertise.png';
 
 function Expertise() {
   return (
-    <section className="mt-32">
+    <section className="mt-16 md:mt-24 lg:mt-32">
       <Container>
         <Header title="our expertise" />
 
-        <div className="mt-5 bg-secondary rounded-2xl px-12 pt-8 flex items-end -space-x-14">
-          <div className="bg-white p-12 space-y-3 rounded-2xl w-1/2 mb-24">
+        <div className="mt-5 bg-secondary rounded-2xl px-4 sm:px-8 lg:px-12 pt-6 sm:pt-8 flex flex-col lg:flex-row lg:items-end lg:-space-x-14">
+          <div className="bg-white p-6 sm:p-8 lg:p-12 space-y-3 rounded-2xl w-full lg:w-1/2 mb-6 lg:mb-24 order-2 lg:order-1">
             <p>
               Embark on a seamless and comfortable journey with our
               diverse fleet of vehicles &quot;on-ready-marks&quot; for
@@ -37,8 +37,15 @@ function Expertise() {
               promise an unforgettable experience.
             </p>
           </div>
-          <div className="w-1/2">
-            <Image src={img} alt="Vehicle Image" />
+          <div className="w-full lg:w-1/2 order-1 lg:order-2 mb-0 lg:mb-0 flex justify-center lg:justify-start z-10">
+            <div className="max-w-sm lg:max-w-none">
+              <Image
+                src={img}
+                alt="Vehicle Image"
+                className="object-contain"
+                priority
+              />
+            </div>
           </div>
         </div>
       </Container>

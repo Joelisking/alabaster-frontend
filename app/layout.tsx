@@ -2,13 +2,10 @@ import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar';
+import WhatsAppButton from '@/components/whatsapp-button';
 
 const manrope = Manrope({
   subsets: ['latin'],
-  // Optional: you can specify weight
-  // weight: ['400', '500', '700'],
-  // Optional: you can specify style
-  // style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-manrope',
 });
@@ -27,7 +24,8 @@ export default function RootLayout({
     <html lang="en" className={manrope.variable}>
       <body className={`antialiased`}>
         <Navbar />
-        <div className="mt-48">{children}</div>
+        <div className="mt-24 lg:mt-36 xl:mt-48">{children}</div>
+        <WhatsAppButton />
       </body>
     </html>
   );

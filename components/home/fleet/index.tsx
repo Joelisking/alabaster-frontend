@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from './Header';
 import Container from '../../shared/container';
 import FleetCards from './FleetCards';
+import Header from '@/components/shared/header';
 
 function Fleet() {
   return (
-    <section className="mt-24">
+    <section className="pt-24">
       <Container>
-        <Header />
+        <Header title="our fleet" />
         <FleetCards />
       </Container>
     </section>

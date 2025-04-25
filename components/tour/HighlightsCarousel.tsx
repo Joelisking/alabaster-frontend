@@ -12,8 +12,6 @@ const ROTATE_DEG = 2.5;
 const STAGGER = 15;
 const CENTER_STAGGER = -65;
 
-const SECTION_HEIGHT = 600;
-
 export const HighlightsCarousel = () => {
   const [cardSize, setCardSize] = useState(CARD_SIZE_LG);
 
@@ -70,10 +68,11 @@ export const HighlightsCarousel = () => {
 
   return (
     <div
-      className="relative w-full overflow-hidden"
-      style={{
-        height: SECTION_HEIGHT,
-      }}>
+      className="relative w-full overflow-hidden h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] mt-7 md:mt-12"
+      // style={{
+      //   height: SECTION_HEIGHT,
+      // }}
+    >
       {testimonials.map((t, idx) => {
         let position = 0;
 
@@ -93,7 +92,7 @@ export const HighlightsCarousel = () => {
           />
         );
       })}
-      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-8">
+      <div className="absolute bottom-4 md:bottom-12 left-1/2 flex -translate-x-1/2 gap-8 z-20">
         <button
           onClick={() => handleMove(-1)}
           className="grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white">
