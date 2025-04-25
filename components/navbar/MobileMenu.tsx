@@ -18,7 +18,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
 }) => {
   const [ref, { height }] = useMeasure();
 
-  const handleDonateClick = () => {
+  const handleButtonClick = () => {
     setMenuOpen(false);
   };
 
@@ -38,8 +38,8 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
           />
         ))}
         <div className="mt-2">
-          <Button onClick={handleDonateClick}>
-            <Link href={'/donate'}>Donate Now</Link>
+          <Button onClick={handleButtonClick}>
+            <Link href={'/contact'}>Contact Us</Link>
           </Button>
         </div>
       </div>

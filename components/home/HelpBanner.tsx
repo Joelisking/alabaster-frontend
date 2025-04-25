@@ -15,7 +15,7 @@ function HelpBanner() {
             </span>
 
             <div className="mt-6">
-              <h2 className="text-5xl lg:text-6xl font-bold">
+              <h2 className="sm:text-5xl lg:text-6xl font-bold">
                 Welcome To Alabaster <br />
                 Car Rentals and Tours Ltd.
               </h2>
