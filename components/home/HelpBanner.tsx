@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Icon } from '@/components/ui';
 import Image from 'next/image';
 import img from '@/public/LooperGroup.svg';
+import Link from 'next/link';
 
 function HelpBanner() {
   return (
@@ -59,12 +60,14 @@ function HelpBanner() {
               </p>
             </div>
           </div>
-          <Button
-            variant={'primary'}
-            className="flex items-center gap-2 mt-6 w-auto">
-            Read More
-            <Icon name="ArrowRight" />
-          </Button>
+          <Link href={'/about'} className="inline-flex">
+            <Button
+              variant={'primary'}
+              className="flex items-center gap-2 mt-6 w-auto">
+              Read More
+              <Icon name="ArrowRight" />
+            </Button>
+          </Link>
         </div>
       </div>
 

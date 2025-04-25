@@ -6,7 +6,7 @@ import Image from 'next/image';
 function PageHeader({ title }: { title: string }) {
   return (
     <Container>
-      <header className="bg-card-foreground rounded-2xl flex items-center gap-24 justify-between overflow-hidden">
+      <header className="bg-card-foreground rounded-2xl flex items-center md:gap-24 justify-between overflow-hidden">
         <div className="px-8 md:px-16">
           <h1 className="text-3xl md:text-5xl text-white capitalize font-semibold whitespace-nowrap">
             {title}
