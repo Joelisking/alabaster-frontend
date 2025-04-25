@@ -8,23 +8,34 @@ function Info() {
       </h2>
 
       <div className="space-y-4 sm:space-y-6">
-        <div className="flex flex-col font-light">
-          <span className="font-bold text-lg">Tel:</span>
-          <span>+233 (0) 302 768 899</span>
-          <span>+233 (0) 244 887 744</span>
-        </div>
+        <div className="flex flex-col font-light space-y-2 sm:space-y-3">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+            <span className="font-bold text-lg">Tel:</span>
+            <div className="flex flex-col">
+              <span>+233 (0) 302 768 899</span>
+              <span>+233 (0) 244 887 744</span>
+            </div>
+          </div>
 
-        <div className="flex gap-1 items-center">
-          <span className="font-bold text-lg">Email:</span>
-          <span className="font-light">info@alabastergh.com |</span>
-          <span className="font-light">sales@alabastergh.com</span>
-        </div>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+            <span className="font-bold text-lg">Email:</span>
+            <div className="flex flex-wrap gap-1">
+              <span className="font-light">info@alabastergh.com</span>
+              <span className="font-light">|</span>
+              <span className="font-light">
+                sales@alabastergh.com
+              </span>
+            </div>
+          </div>
 
-        <div className="flex gap-1 items-center">
-          <span className="font-bold text-lg">Office Location:</span>
-          <span className="font-light">
-            Polo Court, Liberation Road, Accra
-          </span>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+            <span className="font-bold text-lg">
+              Office Location:
+            </span>
+            <span className="font-light">
+              Polo Court, Liberation Road, Accra
+            </span>
+          </div>
         </div>
 
         <div className="mt-4 sm:mt-6 aspect-video rounded-xl overflow-hidden">
