@@ -33,12 +33,16 @@ function HelpBanner() {
               </p>
             </div>
           </div>
-          <Button
-            variant={'primary'}
-            className="flex items-center mt-6">
-            Read More
-            <Icon name="ArrowRight" />
-          </Button>
+          <Link
+            href={'/#fleet'}
+            className="inline-flex hover:scale-105 transition-all duration-300">
+            <Button
+              variant={'primary'}
+              className="flex items-center mt-6">
+              Read More
+              <Icon name="ArrowRight" />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile version - optimized layout */}
@@ -60,7 +64,9 @@ function HelpBanner() {
               </p>
             </div>
           </div>
-          <Link href={'/about'} className="inline-flex">
+          <Link
+            href={'/about'}
+            className="inline-flex hover:scale-105 transition-all duration-300">
             <Button
               variant={'primary'}
               className="flex items-center gap-2 mt-6 w-auto">
@@ -78,11 +84,6 @@ function HelpBanner() {
             src={img}
             alt="svg"
             className="h-full w-full object-cover lg:object-contain object-right opacity-70 lg:opacity-100 transition-all duration-300"
-            style={
-              {
-                // transform: 'translateX(10%)', // Adjust this value as needed
-              }
-            }
             priority
           />
         </div>

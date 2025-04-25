@@ -3,6 +3,7 @@ import { Manrope } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar';
 import WhatsAppButton from '@/components/whatsapp-button';
+import Footer from '@/components/footer';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <Navbar />
         <div className="mt-24 lg:mt-36 xl:mt-48">{children}</div>
+        <Footer />
         <WhatsAppButton />
       </body>
     </html>
