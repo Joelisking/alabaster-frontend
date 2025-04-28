@@ -21,11 +21,41 @@ function Footer() {
             </div>
 
             <div className="flex flex-col space-y-2 mt-4 md:mt-6 text-[#D0D0C8] text-xl md:text-3xl">
-              <span>About Us</span>
-              <span>Tour Ghana</span>
-              <span>FAQs</span>
-              <span>Privacy</span>
-              <span>Terms of Use</span>
+              <span>
+                <Link
+                  href={'/'}
+                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
+                  Home
+                </Link>
+              </span>
+              <span>
+                <Link
+                  href={'/about'}
+                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
+                  About Us
+                </Link>
+              </span>
+              <span>
+                <Link
+                  href={'/tour'}
+                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
+                  Tour Ghana
+                </Link>
+              </span>
+              <span>
+                <Link
+                  href={'/faqs'}
+                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
+                  FAQs
+                </Link>
+              </span>
+              <span>
+                <Link
+                  href={'/contact'}
+                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
+                  Contact
+                </Link>
+              </span>
             </div>
           </div>
 
