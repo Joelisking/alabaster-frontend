@@ -3,6 +3,8 @@ import FleetCard from './FleetCard';
 import { client } from '@/lib/sanity';
 import { IFleetCard } from '@/lib/types';
 
+export const revalidate = 60;
+
 async function getData() {
   const query = `
     *[_type == 'vehicle'] {
