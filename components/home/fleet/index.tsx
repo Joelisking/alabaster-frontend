@@ -3,7 +3,7 @@ import Container from '../../shared/container';
 import FleetCards from './FleetCards';
 import Header from '@/components/shared/header';
 
-function Fleet() {
+async function Fleet() {
   return (
     <section className="pt-24">
       <Container>

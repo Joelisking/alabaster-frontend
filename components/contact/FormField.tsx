@@ -1,4 +1,3 @@
-// FormField.tsx
 'use client';
 import { FieldError, UseFormRegister } from 'react-hook-form';
 import { FormSchema } from './formSchema';
@@ -68,7 +67,7 @@ const FormField = (props: FormFieldProps) => {
           <InputField {...props} />
         )}
       </div>
-      {props.errors[props.name] && (
+      {props.errors[props.name as keyof FormSchema] && (
         <p className="text-red-500 text-sm mt-1">
           {props.errors[props.name]?.message}
         </p>
