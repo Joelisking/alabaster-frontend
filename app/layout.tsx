@@ -26,7 +26,9 @@ export default function RootLayout({
     <html lang="en" className={manrope.variable}>
       <body className={`antialiased`}>
         <Navbar />
-        <div className="mt-24 lg:mt-36 xl:mt-48">{children}</div>
+        <div className="mt-24 md:mt-32 lg:mt-36 xl:mt-48">
+          {children}
+        </div>
         <Footer />
         <WhatsAppButton />
       </body>
