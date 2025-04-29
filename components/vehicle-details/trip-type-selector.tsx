@@ -33,7 +33,7 @@ export default function TripTypeSelector({
             setSelectedTripType={setSelectedTripType}
           />
           {/* Background image container positioned outside the TabsContent */}
-          <div className="relative mt-8">
+          <div className="relative">
             <div className="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden z-20">
               <Image
                 src={img}
@@ -49,11 +49,11 @@ export default function TripTypeSelector({
                   {selectedType.tripType.description}
                 </span>
                 <div className="flex flex-col mt-5">
-                  <span className="text-primary text-5xl font-bold z-30">
+                  <span className="text-primary text-3xl lg:text-5xl font-bold z-30">
                     {selectedType.price.currency}
                     {selectedType.price.amount}
                   </span>
-                  <span className="text-white text-5xl font-bold">
+                  <span className="text-white text-3xl lg:text-5xl font-bold">
                     /per day
                   </span>
                 </div>

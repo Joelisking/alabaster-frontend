@@ -3,8 +3,6 @@ import Header from '@/components/shared/header';
 import { Icon } from '@/components/ui';
 import { client } from '@/lib/sanity';
 import { IVehicle } from '@/lib/types';
-import Image from 'next/image';
-import img from '@/public/looper-group.svg';
 import Form from '@/components/vehicle-details/Form';
 import TripTypeSelector from '@/components/vehicle-details/trip-type-selector';
 
@@ -86,7 +84,7 @@ async function VehicleDetails({
       <Container>
         <Header title={fleet.title} />
 
-        <section className="my-12 flex flex-col lg:flex-row gap-20">
+        <section className="mt-12 flex flex-col lg:flex-row gap-20">
           <div className="w-full lg:w-2/3">
             <h3 className="text-2xl font-medium">Vehicle Details</h3>
             <div className="mt-4 bg-secondary rounded-2xl p-4">
@@ -146,7 +144,7 @@ async function VehicleDetails({
             <h3 className="text-2xl font-medium">Trip Type</h3>
 
             <div className="relative mt-4">
-              <div className="absolute top-16 left-0 w-full h-full rounded-2xl overflow-hidden z-20">
+              {/* <div className="absolute top-16 left-0 w-full h-full rounded-2xl overflow-hidden z-20">
                 <Image
                   src={img}
                   alt=""
@@ -154,7 +152,7 @@ async function VehicleDetails({
                   objectFit="cover"
                   priority
                 />
-              </div>
+              </div> */}
 
               <TripTypeSelector
                 tripTypes={fleet.tripTypes}

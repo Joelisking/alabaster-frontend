@@ -118,10 +118,11 @@ const DatePickerField = ({
                     'text-primary font-medium text-sm w-9 rounded-md',
                   row: 'flex w-full mt-2 gap-2',
                   cell: 'h-9 w-9 text-center text-sm relative p-0 focus-within:relative rounded-md',
-                  day: 'h-9 w-9 p-0 hover:bg-gray-800 hover:text-white focus:bg-gray-800 rounded-md flex items-center justify-center aria-selected:opacity-100',
+                  day: 'h-9 w-9 p-0 hover:bg-gray-800 hover:text-white rounded-md flex items-center justify-center aria-selected:opacity-100 text-white hover:bg-popover-foreground',
                   day_selected:
                     'bg-primary text-black font-medium hover:bg-primary hover:text-black focus:bg-primary focus:text-black',
-                  day_today: 'border border-primary text-white',
+                  day_today:
+                    'border border-primary text-white bg-transparent',
                   day_outside: 'text-muted-foreground opacity-50',
                   day_disabled: 'text-muted-foreground opacity-50',
                   day_range_middle:
