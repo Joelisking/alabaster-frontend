@@ -17,7 +17,7 @@ export const Navbar = () => {
       <div className="flex items-center justify-between px-8 py-3">
         <Logo />
         <Links />
-        <Buttons setMenuOpen={setMenuOpen} />
+        <Buttons menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
       <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
     </nav>

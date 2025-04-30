@@ -5,10 +5,11 @@ import facebook from '@/public/facebook.svg';
 import instagram from '@/public/instagram.svg';
 import linkedin from '@/public/linkedin.svg';
 import Link from 'next/link';
+import { links } from './links';
 
 function Footer() {
   return (
-    <footer className="bg-card-foreground">
+    <footer className="bg-card-foreground py-8">
       <Container className="p-5 md:p-20 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-0">
         {/* First Section - Responsive width and spacing */}
         <div className="w-full md:w-2/5 space-y-8 md:space-y-0">
@@ -21,41 +22,15 @@ function Footer() {
             </div>
 
             <div className="flex flex-col space-y-2 mt-4 md:mt-6 text-[#D0D0C8] text-xl md:text-3xl">
-              <span>
-                <Link
-                  href={'/'}
-                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
-                  Home
-                </Link>
-              </span>
-              <span>
-                <Link
-                  href={'/about'}
-                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
-                  About Us
-                </Link>
-              </span>
-              <span>
-                <Link
-                  href={'/tour'}
-                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
-                  Tour Ghana
-                </Link>
-              </span>
-              <span>
-                <Link
-                  href={'/faqs'}
-                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
-                  FAQs
-                </Link>
-              </span>
-              <span>
-                <Link
-                  href={'/contact'}
-                  className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
-                  Contact
-                </Link>
-              </span>
+              {links.map((link, index) => (
+                <span key={index}>
+                  <Link
+                    href={link.href}
+                    className="inline-flex cursor-pointer hover:text-white transition-all duration-300">
+                    {link.label}
+                  </Link>
+                </span>
+              ))}
             </div>
           </div>
 
@@ -68,7 +43,9 @@ function Footer() {
             </div>
 
             <div className="mt-4 md:mt-6 text-[#D0D0C8] space-y-1 md:space-y-3">
-              <span className="block">GOLF Club - Accra</span>
+              <span className="block">
+                Polo Court, Liberation Road, Accra
+              </span>
               <div className="flex flex-col">
                 <span className="text-lg md:text-xl">10am—6pm</span>
                 <span>/ Everyday</span>

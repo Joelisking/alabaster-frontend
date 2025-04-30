@@ -124,55 +124,77 @@ export const fleet = [
 export const testimonials: ITestimonial[] = [
   {
     name: 'Rema Alma',
-    text: 'Renting with Alabaster car rentals was absolute breeze!! The vehicle was clean and well maintained and I really loved every bit of the experience. Renting with Alabaster car rentals was absolute breeze!! The vehicle was clean and well maintained and I really loved every bit of the experience.',
+    text: 'Renting with Alabaster car rentals was absolute breeze! The vehicle was clean and well maintained and the staff was incredibly friendly and helpful. I will definitely be using their services again for my next trip.',
   },
   {
-    name: 'James Wilson',
-    text: 'I was impressed by the quality of service provided by Alabaster car rentals. The staff was friendly and helpful, and the car was in perfect condition. I would definitely recommend their services to anyone looking for a reliable car rental company.',
+    name: 'Millenium Development Authority (MIDA) ',
+    text: 'After our first trip with Alabaster Car Rentals, we decided they would be our go-to car rental company. The customer service is surreal & our rides are seamless, safe, and satisfying. Truly, this is a recommended car rental service for all!',
   },
   {
-    name: 'Sarah Johnson',
-    text: 'My experience with Alabaster car rentals was exceptional! The booking process was simple, pickup was quick, and the car exceeded my expectations. Their attention to detail and customer service made my trip stress-free and enjoyable.',
+    name: 'Esther Cobinnah',
+    text: 'My familiy and I were in Ghana from the UK for the Easter Holidays and were picked up from the airport. Even though our flight delayed, our driver was patient and acted professional. All our trips within Ghana were comfortable and safe thanks to Alabaster Car Rentals. ',
   },
   {
-    name: 'Michael Chen',
-    text: "Alabaster provided me with an excellent vehicle at a reasonable price. The car was spotless and ran perfectly throughout my trip. Their staff was professional and accommodating. I'll definitely be using their services again in the future.",
-  },
-  {
-    name: 'Lisa Rodriguez',
-    text: 'From reservation to return, Alabaster car rentals provided a seamless experience. The vehicle was exactly what I needed for my family vacation, and the pricing was transparent with no hidden fees. Highly recommend!',
+    name: 'Cargill Ghana Ltd.',
+    text: "Alabaster Car Rentals' Corporate Shuttle Service is one of the best in Ghana! For over a decade, they continue to provide top notch staff bussing services which has increased employee satisfaction and reduced our transportation costs drastically. ",
   },
 ];
 
 export const faqItems = [
   {
     id: 'item-1',
-    title: 'What documents do I need to rent a car?',
+    title:
+      'What types of vehicles does your car rental service offer?',
     content:
-      'To rent a car, you will need a valid driver’s license, a government-issued ID or passport, and a valid credit or debit card for payment. Additional requirements may apply for international renters.',
+      'We offer a diverse fleet, including saloon cars, large coach-type buses, medium-size buses, mini-buses/vans, and Toyota Prado/V8-VX 4×4 SUVs.',
   },
   {
     id: 'item-2',
-    title: 'What is the minimum age to rent a car?',
+    title: 'How can I make a reservation?',
     content:
-      'The minimum age to rent a car is typically 21 years old. However, drivers under 25 may be subject to a young driver surcharge. Please check with us for specific age requirements.',
+      'You can easily make a reservation through our website, contact our customer service, or visit our office at Polo Court, Liberation Road, Accra.',
   },
   {
     id: 'item-3',
-    title: 'Can I rent a car without a credit card?',
+    title: 'Do you provide self-drive services?',
     content:
-      'Yes, you can rent a car with a debit card, but additional verification may be required. Please contact us in advance to confirm the payment options available.',
+      'No, we only offer professional chauffeur services. Our drivers are well-trained and familiar with local routes.',
   },
   {
     id: 'item-4',
-    title: 'Is insurance included in the rental price?',
+    title: 'Can I modify or cancel my reservation?',
     content:
-      'Basic insurance is included in the rental price. However, we recommend purchasing additional coverage for extra protection. Please review our insurance options during the booking process.',
+      'Yes, you can modify or cancel your reservation online or by contacting our customer service.',
   },
   {
     id: 'item-5',
-    title: 'What happens if I return the car late?',
+    title: 'Is insurance included in the rental cost?',
     content:
-      'If you return the car late, additional charges may apply. We offer a grace period, but beyond that, you may be charged for an extra day. Please contact us if you anticipate a delay.',
+      'All vehicles are comprehensively insured. No additional insurance charges apply. Enjoy worry-free driving with our inclusive coverage.',
+  },
+  {
+    id: 'item-6',
+    title: 'What happens in case of a breakdown or emergency?',
+    content:
+      'We provide 24/7 roadside assistance. Contact our office hotline, and we will assist you promptly.',
+  },
+  {
+    id: 'item-7',
+    title:
+      'Can I rent a vehicle for special events like weddings or corporate functions?',
+    content:
+      'Absolutely! We offer specialized services for weddings, corporate events, and other special occasions. Contact our Sales team for customized solutions.',
+  },
+  {
+    id: 'item-8',
+    title: 'How are rental rates calculated?',
+    content:
+      'Rental rates are calculated based on the type of vehicle, rental duration, and additional fees such as VAT, NHIL, Ghana Tourism Levy and chauffeur allowances. Visit our website or contact us for a detailed quote.',
+  },
+  {
+    id: 'item-9',
+    title: 'Do you offer long-term rental options?',
+    content:
+      'Yes, we provide long-term rental options with special rates. Contact our Sales team for more information.',
   },
 ];
