@@ -4,11 +4,12 @@ import { EnquiryForm, enquiryFormSchema } from './types';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import FormField from './FormField';
-import { VehicleTripType } from '@/lib/types';
+import { GlobalSettings, TripTypePricing } from '@/lib/types';
 import { format } from 'date-fns';
 
 interface FormProps {
-  tripTypes: VehicleTripType[];
+  tripTypes: TripTypePricing[];
+  globalSettings?: GlobalSettings;
 }
 
 function Form({ tripTypes }: FormProps) {

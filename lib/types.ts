@@ -4,22 +4,14 @@ export interface ITestimonial {
   text: string;
 }
 
-export interface TripTypePrice {
-  currency: 'GHC' | 'USD';
-  amount: number;
-}
-
-interface TripTypeReference {
-  _id: string;
-  _ref: string;
-  _type: 'reference';
-  name?: string;
-}
-
-export interface VehicleTripType {
-  _key?: string;
-  price: TripTypePrice;
-  tripType: TripTypeReference;
+export interface TripTypePricing {
+  _key: string;
+  tripType: {
+    _id: string;
+    name?: string;
+    description?: string;
+  };
+  price: number;
 }
 
 export interface IFleetCard {
@@ -31,14 +23,9 @@ export interface IFleetCard {
     fuelType: 'diesel' | 'petrol' | 'hybrid' | 'electric';
     seats: number;
   };
-  tripTypes: VehicleTripType[];
+  tripTypes: TripTypePricing[];
   currentSlug: string;
-}
-
-interface TripTypeReference {
-  _id: string;
-  name?: string;
-  description?: string;
+  category: CategoryReference;
 }
 
 interface AccessoryReference {
@@ -67,10 +54,15 @@ export interface IVehicle {
     seats: number;
   };
   description?: string;
-  tripTypes: VehicleTripType[];
+  tripTypes: TripTypePricing[];
   accessories?: AccessoryReference[];
   category?: CategoryReference;
   slug: {
     current: string;
   };
+}
+
+export interface GlobalSettings {
+  exchangeRate: number;
+  displayCurrency: 'USD' | 'GHS';
 }

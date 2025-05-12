@@ -64,13 +64,6 @@ export default {
       title: 'Description',
       type: 'text',
     },
-    // {
-    //   name: 'location',
-    //   title: 'Location',
-    //   type: 'string',
-    //   description: 'Available location (e.g. Accra Only)',
-    // },
-    // In your vehicle schema, replace the existing tripType field with:
     {
       name: 'tripTypes',
       title: 'Trip Types & Pricing',
@@ -96,38 +89,22 @@ export default {
             },
             {
               name: 'price',
-              title: 'Price for This Trip Type',
-              type: 'object',
-              fields: [
-                {
-                  name: 'currency',
-                  title: 'Currency',
-                  type: 'string',
-                  initialValue: 'GHC',
-                  options: {
-                    list: ['GHC', 'USD'],
-                  },
-                },
-                {
-                  name: 'amount',
-                  title: 'Amount',
-                  type: 'number',
-                  validation: (Rule: import('sanity').Rule) => Rule.required().min(0),
-                },
-              ],
+              title: 'Price (USD)',
+              type: 'number',
+              description: 'Price in US Dollars',
+              validation: (Rule: any) => Rule.required().min(0),
             },
           ],
           preview: {
             select: {
               title: 'tripType.name',
-              price: 'price.amount',
-              currency: 'price.currency',
+              price: 'price',
             },
-            prepare(selection: {title?: string; price?: number; currency?: string}) {
-              const {title, price, currency} = selection
+            prepare(selection: {title?: string; price?: number}) {
+              const {title, price} = selection
               return {
                 title: title || 'No trip type selected',
-                subtitle: price ? `${currency} ${price}` : 'No price set',
+                subtitle: price ? `USD ${price}` : 'No price set',
               }
             },
           },

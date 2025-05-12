@@ -34,7 +34,7 @@ function HelpBanner() {
             </div>
           </div>
           <Link
-            href={'/#fleet'}
+            href={'/about'}
             className="inline-flex hover:scale-105 transition-all duration-300">
             <Button
               variant={'primary'}

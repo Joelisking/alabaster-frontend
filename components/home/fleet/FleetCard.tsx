@@ -1,16 +1,39 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { IFleetCard } from '@/lib/types';
+import { IFleetCard, GlobalSettings } from '@/lib/types';
 import { urlFor } from '@/lib/sanity';
 import { useRouter } from 'next/navigation';
 
 interface FleetProps {
   data: IFleetCard;
+  globalSettings: GlobalSettings;
 }
 
-function FleetCard({ data }: FleetProps) {
+function FleetCard({ data, globalSettings }: FleetProps) {
   const router = useRouter();
+
+  // Get prices in display currency
+  const getDisplayPrices = () => {
+    if (!data.tripTypes?.length) return { min: 0, max: 0 };
+
+    const prices = data.tripTypes.map((t) => {
+      if (globalSettings.displayCurrency === 'GHS') {
+        return t.price * globalSettings.exchangeRate;
+      }
+      return t.price;
+    });
+
+    return {
+      min: Math.min(...prices),
+      max: Math.max(...prices),
+    };
+  };
+
+  const { min, max } = getDisplayPrices();
+  const currencySymbol =
+    globalSettings.displayCurrency === 'GHS' ? 'GH₵' : '$';
+
   return (
     <div
       className="rounded-xl p-3 md:p-4 border border-border shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
@@ -31,9 +54,6 @@ function FleetCard({ data }: FleetProps) {
         <p className="font-semibold text-lg md:text-xl">
           {data.title}
         </p>
-        {/* <p className="font-semibold text-lg md:text-xl">
-          {data.vehicleType} - {data.tripType}
-        </p> */}
       </div>
 
       <div className="flex flex-wrap gap-2 capitalize mt-3">
@@ -41,7 +61,7 @@ function FleetCard({ data }: FleetProps) {
           {data.vehicleDetails.fuelType}
         </span>
         <span className="bg-secondary py-1 px-3 md:px-4 rounded text-sm md:text-base">
-          {data.vehicleDetails.year}
+          {data.category.title}
         </span>
         <span className="bg-secondary py-1 px-3 md:px-4 rounded text-sm md:text-base">
           {data.vehicleDetails.seats} seats
@@ -50,15 +70,33 @@ function FleetCard({ data }: FleetProps) {
 
       <div className="mt-4 md:mt-5">
         <span className="bg-secondary font-extrabold py-1 px-3 md:px-4 rounded text-lg md:text-xl">
-          <span>
-            GHC
-            {Math.min(...data.tripTypes.map((t) => t.price.amount))}
-          </span>
-          <span> - </span>
-          <span>
-            GHC
-            {Math.max(...data.tripTypes.map((t) => t.price.amount))}
-          </span>
+          {min === max ? (
+            <span>
+              {currencySymbol}
+              {min.toLocaleString(undefined, {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </span>
+          ) : (
+            <>
+              <span>
+                {currencySymbol}
+                {min.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+              <span> - </span>
+              <span>
+                {currencySymbol}
+                {max.toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
+              </span>
+            </>
+          )}
         </span>
       </div>
     </div>

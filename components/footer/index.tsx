@@ -47,7 +47,7 @@ function Footer() {
                 Polo Court, Liberation Road, Accra
               </span>
               <div className="flex flex-col">
-                <span className="text-lg md:text-xl">10am—6pm</span>
+                <span className="text-lg md:text-xl">8am—5pm</span>
                 <span>/ Everyday</span>
               </div>
             </div>
@@ -65,8 +65,8 @@ function Footer() {
             </div>
 
             <div className="mt-3 flex flex-col text-sm text-[#D0D0C8]">
-              <span>+233980 971-24-19</span>
-              <span>hello@alabaster.com</span>
+              <span>+233538237772</span>
+              <span>operations@alabaster.com</span>
             </div>
 
             <div className="mt-8 md:mt-16 bg-secondary-foreground p-4 md:p-6 w-full lg:w-3/5 rounded-xl md:rounded-2xl">

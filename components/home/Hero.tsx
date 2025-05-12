@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../shared/container';
 import Image from 'next/image';
-import img from '@/public/hero.png';
+import img from '@/public/starex-hero.jpg';
 import { Button } from '../ui/button';
 import { Icon } from '../ui/icon';
 import Link from 'next/link';
@@ -20,7 +20,7 @@ function Hero() {
             </span>
           </h1>
           <Link
-            href={'/#fleet'}
+            href={'#fleet'}
             className="inline-flex hover:scale-105 transition-all duration-300">
             <Button className="flex items-center mt-4">
               Get Started

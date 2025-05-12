@@ -2,7 +2,7 @@ import Container from '@/components/shared/container';
 import Header from '@/components/shared/header';
 import { Icon } from '@/components/ui';
 import { client } from '@/lib/sanity';
-import { IVehicle } from '@/lib/types';
+import { GlobalSettings, IVehicle } from '@/lib/types';
 import Form from '@/components/vehicle-details/Form';
 import TripTypeSelector from '@/components/vehicle-details/trip-type-selector';
 
@@ -45,10 +45,7 @@ async function getData(id: string) {
       name,
       description
     },
-    price {
-      currency,
-      amount
-    }
+    price
   },
   accessories[]->{
     _id,
@@ -68,12 +65,18 @@ async function getData(id: string) {
   return data;
 }
 
+async function getGlobalSettings() {
+  const query = `*[_type == "globalSettings"][0] { exchangeRate, displayCurrency }`;
+  return await client.fetch(query);
+}
+
 async function VehicleDetails({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  const globalSettings: GlobalSettings = await getGlobalSettings();
   const fleet: IVehicle = await getData(slug);
 
   // Default selected trip type
@@ -157,6 +160,7 @@ async function VehicleDetails({
               <TripTypeSelector
                 tripTypes={fleet.tripTypes}
                 defaultValue={defaultTripTypeId}
+                globalSettings={globalSettings}
               />
             </div>
 
@@ -165,7 +169,10 @@ async function VehicleDetails({
                 Get in touch using the form below
               </span>
 
-              <Form tripTypes={fleet.tripTypes} />
+              <Form
+                tripTypes={fleet.tripTypes}
+                globalSettings={globalSettings}
+              />
             </div>
           </div>
         </section>

@@ -6,10 +6,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '../ui/select';
-import { VehicleTripType } from '@/lib/types';
+import { TripTypePricing } from '@/lib/types';
 
 interface Props {
-  tripTypes: VehicleTripType[];
+  tripTypes: TripTypePricing[];
   defaultValue: string;
   setSelectedTripType: (tripTypeId: string) => void;
 }
@@ -26,7 +26,7 @@ function TripTypeSelect({
         <SelectValue placeholder="Select trip type" />
       </SelectTrigger>
       <SelectContent>
-        {tripTypes.map((tripType: VehicleTripType) => (
+        {tripTypes.map((tripType: TripTypePricing) => (
           <SelectItem
             key={tripType._key}
             value={tripType.tripType._id}>

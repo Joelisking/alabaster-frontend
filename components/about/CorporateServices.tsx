@@ -4,7 +4,7 @@ import Header from '../shared/header';
 
 function CorporateServices() {
   return (
-    <section className="mt-16 md:mt-24 lg:mt-32">
+    <section className="pt-16 md:pt-24 lg:pt-32">
       <Container>
         <Header title="Corporate Shuttle Services" />
 

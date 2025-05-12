@@ -25,7 +25,7 @@ export default function WhatsAppContact() {
   const router = useRouter();
 
   // Replace with your WhatsApp number (with country code, no spaces or symbols)
-  const whatsappNumber = '233594765977';
+  const whatsappNumber = '233538237772';
 
   const handleSend = () => {
     const formattedMessage = `${subject}: ${message}`;

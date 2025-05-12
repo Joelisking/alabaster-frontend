@@ -9,18 +9,20 @@ function Info() {
 
       <div className="space-y-4 sm:space-y-6">
         <div className="flex flex-col font-light space-y-2 sm:space-y-3">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+          <div className="flex flex-col">
             <span className="font-bold text-lg">Tel:</span>
             <div className="flex flex-col">
               <span>+233 (0) 302 768 899</span>
-              <span>+233 (0) 244 887 744</span>
+              <span>+233 (0) 538 237 772</span>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-2">
             <span className="font-bold text-lg">Email:</span>
             <div className="flex flex-wrap gap-1">
-              <span className="font-light">info@alabastergh.com</span>
+              <span className="font-light">
+                operations@alabastergh.com
+              </span>
               <span className="font-light">|</span>
               <span className="font-light">
                 sales@alabastergh.com

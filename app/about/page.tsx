@@ -10,7 +10,9 @@ function About() {
       <PageHeader title="about us" />
       <Story />
       <Expertise />
-      <CorporateServices />
+      <div id="shuttle-services">
+        <CorporateServices />
+      </div>
       <TravelAndTours />
     </main>
   );
