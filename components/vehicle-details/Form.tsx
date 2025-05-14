@@ -49,7 +49,7 @@ function Form({ tripTypes }: FormProps) {
     Return Date: ${formattedReturnDate}`;
 
     // Create WhatsApp link
-    const whatsappUrl = `https://wa.me/233594765977?text=${message}`;
+    const whatsappUrl = `https://wa.me/233538237772?text=${message}`;
 
     // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
