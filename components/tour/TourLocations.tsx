@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import img from '@/public/LooperGroup.svg';
+import Container from '../shared/container';
 
 // Define types
 interface Accommodation {
@@ -624,7 +625,7 @@ function TourLocations() {
 
   return (
     <section className="py-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Container>
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
@@ -659,7 +660,7 @@ function TourLocations() {
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden relative">
           {/* Hero Section */}
           <div className="bg-gradient-to-r from-[#313131] via-[#000000] to-[#222222] p-8 md:p-12 text-white relative">
-            <div className="absolute top-0 bottom-0 right-0 h-full w-full">
+            <div className="absolute top-0 bottom-0 right-0 h-full w-full opacity-50 md:opacity-100">
               <div className="relative h-full w-full">
                 <Image
                   src={img}
@@ -699,13 +700,13 @@ function TourLocations() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-sm relative z-20">
+              <div className="grid grid-cols-2 xl:grid-cols-3 gap-3 text-sm relative z-20">
                 {selectedRegion.highlights
                   .slice(0, 6)
                   .map((highlight, index) => (
                     <div
                       key={index}
-                      className="bg-secondary text-black px-3 py-2 rounded-lg text-center">
+                      className="bg-secondary text-black px-3 py-2 rounded-lg text-center place-content-center">
                       {highlight}
                     </div>
                   ))}
@@ -722,7 +723,7 @@ function TourLocations() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 py-4 px-6 text-center font-medium capitalize transition-colors ${
+                  className={`flex-1 py-4 px-6 text-xs sm:text-sm md:text-base text-center font-medium capitalize transition-colors ${
                     activeTab === tab
                       ? 'border-b-2 border-primary text-primary bg-gray-50'
                       : 'text-gray-600 hover:text-black hover:bg-gray-50'
@@ -882,7 +883,7 @@ function TourLocations() {
             )}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
