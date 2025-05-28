@@ -1,3 +1,4 @@
+import AboutLink from '@/components/home/about-link';
 import Fleet from '@/components/home/fleet';
 import HelpBanner from '@/components/home/HelpBanner';
 import Hero from '@/components/home/Hero';
@@ -11,6 +12,7 @@ function Home() {
       <Hero />
       <HelpBanner />
       <Stats />
+      <AboutLink />
       <div id="fleet">
         <Fleet />
       </div>
