@@ -208,7 +208,7 @@ const TESTIMONIAL_DATA: TestimonialType[] = [
   },
   {
     tempId: 9,
-    imgSrc: '/tour/tour4.jpg',
+    imgSrc: '/tour/tour4.jpeg',
   },
   {
     tempId: 10,

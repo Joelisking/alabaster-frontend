@@ -14,7 +14,29 @@ function Form() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = () => {
+  const onSubmit = (data: FormSchema) => {
+    // Format the message for WhatsApp
+    const whatsappMessage =
+      `*New Contact Form Submission*\n\n` +
+      `*Name:* ${data.name}\n` +
+      `*Email:* ${data.email}\n` +
+      `*Phone:* ${data.phone}\n` +
+      (data.subject ? `*Subject:* ${data.subject}\n` : '') +
+      `*Message:* ${data.message}`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // WhatsApp number (using the one from Info component)
+    const whatsappNumber = '233538237772'; // Removed the leading 0 and + for WhatsApp API
+
+    // Open WhatsApp link
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
+      '_blank'
+    );
+
+    // Reset the form
     reset();
   };
 

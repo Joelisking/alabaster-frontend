@@ -21,11 +21,11 @@ function Info() {
             <span className="font-bold text-lg">Email:</span>
             <div className="flex flex-wrap gap-1">
               <span className="font-light">
-                operations@alabastergh.com
+                sales@alabastergh.com
               </span>
               <span className="font-light">|</span>
               <span className="font-light">
-                sales@alabastergh.com
+                operations@alabastergh.com
               </span>
             </div>
           </div>
