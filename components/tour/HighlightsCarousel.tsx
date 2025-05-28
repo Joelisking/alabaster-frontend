@@ -184,19 +184,19 @@ const TESTIMONIAL_DATA: TestimonialType[] = [
   },
   {
     tempId: 3,
-    imgSrc: '/tour/tour1.jpg',
+    imgSrc: '/tour/tour4.jpg',
   },
   {
     tempId: 4,
-    imgSrc: '/tour/tour3.jpg',
+    imgSrc: '/tour/tour1.jpg',
   },
   {
     tempId: 5,
-    imgSrc: '/tour/tour2.jpg',
+    imgSrc: '/tour/tour3.jpg',
   },
   {
     tempId: 6,
-    imgSrc: '/tour/tour1.jpg',
+    imgSrc: '/tour/tour4.jpg',
   },
   {
     tempId: 7,
@@ -208,14 +208,18 @@ const TESTIMONIAL_DATA: TestimonialType[] = [
   },
   {
     tempId: 9,
-    imgSrc: '/tour/tour2.jpg',
+    imgSrc: '/tour/tour4.jpg',
   },
   {
     tempId: 10,
-    imgSrc: '/tour/tour3.jpg',
+    imgSrc: '/tour/tour1.jpg',
   },
   {
     tempId: 11,
-    imgSrc: '/tour/tour1.jpg',
+    imgSrc: '/tour/tour2.jpg',
+  },
+  {
+    tempId: 12,
+    imgSrc: '/tour/tour3.jpg',
   },
 ];

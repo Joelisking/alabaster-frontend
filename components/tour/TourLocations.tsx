@@ -45,7 +45,7 @@ interface Region {
 const regions: Region[] = [
   {
     id: 'accra',
-    name: 'Accra',
+    name: 'Greater Accra Region',
     title: 'Mo heee',
     description:
       "The City of Accra has been Ghana's capital since 1877. Spreading along the Atlantic coast, the city is well endowed with luxury hotels, excellent restaurants and nightclubs, plus rich cultural heritage sites.",
@@ -142,7 +142,7 @@ const regions: Region[] = [
   },
   {
     id: 'cape-coast',
-    name: 'Cape Coast',
+    name: 'Central Region',
     title: 'Akwaaba',
     description:
       'Cape Coast is one of the most historical cities in Ghana and capital of the Central Region. Former center of British administration, it offers stunning palm-fringed scenery and important historical sites.',
@@ -363,7 +363,7 @@ const regions: Region[] = [
   },
   {
     id: 'kumasi',
-    name: 'Kumasi',
+    name: 'Ashanti Region',
     title: 'Akwaaba',
     description:
       "Capital of the Ashanti kingdom, popularly known as the 'Garden City' with numerous cultural sites including gold mines, Lake Bosomtwe, and the famous Bonwire kente village.",
@@ -866,8 +866,8 @@ function TourLocations() {
                               accommodation.type === 'resort'
                                 ? 'bg-primary/10 text-primary border border-primary/20'
                                 : accommodation.type === 'lodge'
-                                  ? 'bg-black/10 text-black border border-black/20'
-                                  : 'bg-gray-100 text-black border border-gray-200'
+                                ? 'bg-black/10 text-black border border-black/20'
+                                : 'bg-gray-100 text-black border border-gray-200'
                             }`}>
                             {accommodation.type
                               .charAt(0)

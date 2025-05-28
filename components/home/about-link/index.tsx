@@ -40,10 +40,10 @@ function AboutLink() {
 
   return (
     <section className="mt-18 md:mt-24 lg:mt-28">
-      <Container className="bg-gradient-to-r from-[#313131] via-[#000000] to-[#222222] flex items-center justify-between rounded-2xl overflow-hidden h-96">
-        <div className="w-1/4 flex justify-end pl-12 pt-24">
+      <Container className="bg-gradient-to-r from-[#313131] via-[#000000] to-[#222222] flex flex-col lg:flex-row items-center justify-between rounded-2xl overflow-hidden min-h-[400px] lg:h-96">
+        <div className="w-full lg:w-1/2 xl:w-1/3 flex justify-center lg:justify-end px-6 lg:px-12 pt-12 lg:pt-24 text-center lg:text-left">
           <div>
-            <h2 className="text-4xl font-bold text-white">
+            <h2 className="text-3xl md:text-4xl font-bold text-white">
               Delivering professional services for decades
               <span className="text-primary">.</span>
             </h2>
@@ -56,7 +56,7 @@ function AboutLink() {
         </div>
 
         {/* Carousel Section */}
-        <div className="w-3/4 relative h-full">
+        <div className="w-full lg:w-1/2 xl:w-2/3 relative h-64 lg:h-full">
           <div className="relative overflow-hidden h-full">
             <div
               className="flex transition-transform duration-500 ease-in-out h-full"
