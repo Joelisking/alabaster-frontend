@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import shuttle from '@/public/shuttle2.jpg';
+import shuttle from '@/public/hiace-fleet.jpg';
 import Container from '../shared/container';
 import Link from 'next/link';
 import { Button, Icon } from '../ui';
