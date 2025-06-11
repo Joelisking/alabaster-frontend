@@ -172,54 +172,62 @@ type TestimonialType = {
 const TESTIMONIAL_DATA: TestimonialType[] = [
   {
     tempId: 0,
-    imgSrc: '/tour/tour1.jpg',
+    imgSrc: '/tour/1.jpg',
   },
   {
     tempId: 1,
-    imgSrc: '/tour/tour2.jpg',
+    imgSrc: '/tour/2.jpg',
   },
   {
     tempId: 2,
-    imgSrc: '/tour/tour3.jpg',
+    imgSrc: '/tour/3.jpg',
   },
   {
     tempId: 3,
-    imgSrc: '/tour/tour4.jpeg',
+    imgSrc: '/tour/4.jpg',
   },
   {
     tempId: 4,
-    imgSrc: '/tour/tour1.jpg',
+    imgSrc: '/tour/5.jpg',
   },
   {
     tempId: 5,
-    imgSrc: '/tour/tour3.jpg',
+    imgSrc: '/tour/6.jpg',
   },
   {
     tempId: 6,
-    imgSrc: '/tour/tour4.jpeg',
+    imgSrc: '/tour/7.jpg',
   },
   {
     tempId: 7,
-    imgSrc: '/tour/tour2.jpg',
+    imgSrc: '/tour/8.jpeg',
   },
   {
     tempId: 8,
-    imgSrc: '/tour/tour3.jpg',
+    imgSrc: '/tour/9.jpg',
   },
   {
     tempId: 9,
-    imgSrc: '/tour/tour4.jpeg',
+    imgSrc: '/tour/10.jpg',
   },
   {
     tempId: 10,
-    imgSrc: '/tour/tour1.jpg',
+    imgSrc: '/tour/11.webp',
   },
   {
     tempId: 11,
-    imgSrc: '/tour/tour2.jpg',
+    imgSrc: '/tour/12.jpg',
   },
   {
     tempId: 12,
-    imgSrc: '/tour/tour3.jpg',
+    imgSrc: '/tour/13.jpeg',
+  },
+  {
+    tempId: 14,
+    imgSrc: '/tour/14.jpg',
+  },
+  {
+    tempId: 15,
+    imgSrc: '/tour/15.jpg',
   },
 ];
