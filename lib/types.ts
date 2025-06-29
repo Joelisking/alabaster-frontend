@@ -66,3 +66,32 @@ export interface GlobalSettings {
   exchangeRate: number;
   displayCurrency: 'USD' | 'GHS';
 }
+
+export interface Accommodation {
+  name: string;
+  type: 'hotel' | 'resort' | 'lodge';
+}
+
+export interface DayItinerary {
+  day: number;
+  title: string;
+  activities: string[];
+  highlights?: string[];
+  image: string;
+}
+
+export interface Region {
+  id: string;
+  name: string;
+  title: string;
+  description: string;
+  duration: string;
+  highlights: string[];
+  itinerary: DayItinerary[];
+  accommodations: Accommodation[];
+  keyAttractions: {
+    name: string;
+    image: string;
+  }[];
+  icon?: React.ReactNode;
+}
