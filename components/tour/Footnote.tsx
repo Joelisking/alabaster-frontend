@@ -95,10 +95,9 @@ function Footnote() {
 
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
               <h4 className="font-bold text-lg text-black mb-3">
-                Ahafo & Oti Regions
+                Oti Region
               </h4>
               <ul className="space-y-2 text-sm text-gray-700">
-                <li>• Goaso Cultural Center</li>
                 <li>• Dambai Lakeside</li>
                 <li>• Traditional Festivals</li>
                 <li>• Agricultural Tours</li>

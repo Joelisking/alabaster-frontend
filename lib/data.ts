@@ -526,7 +526,7 @@ export const regions: Region[] = [
       'Mole National Park',
       'Larabanga Mosque',
       'Paga Crocodile Pond',
-      'Kintampo Falls',
+      'Gambaga Escarpment',
       'Wildlife Safari',
       'Traditional Crafts',
     ],
@@ -638,15 +638,12 @@ export const regions: Region[] = [
         day: 7,
         title: 'Scenic Return',
         activities: [
-          'Kintampo Falls visit',
+          'Gambaga Escarpment visit',
           'Kumasi stopover',
           'Return to Accra',
         ],
-        highlights: [
-          'Beautiful waterfall scenery',
-          'Regional transitions',
-        ],
-        image: '/north/itinerary/day7.jpg',
+        highlights: ['Gambaga Escarpment', 'Regional transitions'],
+        image: '/north/attractions/escarpment.jpg',
       },
     ],
     accommodations: [
