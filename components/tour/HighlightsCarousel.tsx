@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 import Image from 'next/image';
 
-const CARD_SIZE_LG = 565;
-const CARD_SIZE_SM = 390;
+const CARD_WIDTH_LG = 565;
+const CARD_HEIGHT_LG = Math.round((CARD_WIDTH_LG * 9) / 16); // 16:9 aspect ratio
+const CARD_WIDTH_SM = 390;
+const CARD_HEIGHT_SM = Math.round((CARD_WIDTH_SM * 9) / 16);
 
 const ROTATE_DEG = 2.5;
 
@@ -13,7 +15,8 @@ const STAGGER = 15;
 const CENTER_STAGGER = -65;
 
 export const HighlightsCarousel = () => {
-  const [cardSize, setCardSize] = useState(CARD_SIZE_LG);
+  const [cardWidth, setCardWidth] = useState(CARD_WIDTH_LG);
+  const [cardHeight, setCardHeight] = useState(CARD_HEIGHT_LG);
 
   const [testimonials, setTestimonials] = useState(TESTIMONIAL_DATA);
 
@@ -45,18 +48,22 @@ export const HighlightsCarousel = () => {
     const { matches } = window.matchMedia('(min-width: 640px)');
 
     if (matches) {
-      setCardSize(CARD_SIZE_LG);
+      setCardWidth(CARD_WIDTH_LG);
+      setCardHeight(CARD_HEIGHT_LG);
     } else {
-      setCardSize(CARD_SIZE_SM);
+      setCardWidth(CARD_WIDTH_SM);
+      setCardHeight(CARD_HEIGHT_SM);
     }
 
     const handleSetCardSize = () => {
       const { matches } = window.matchMedia('(min-width: 640px)');
 
       if (matches) {
-        setCardSize(CARD_SIZE_LG);
+        setCardWidth(CARD_WIDTH_LG);
+        setCardHeight(CARD_HEIGHT_LG);
       } else {
-        setCardSize(CARD_SIZE_SM);
+        setCardWidth(CARD_WIDTH_SM);
+        setCardHeight(CARD_HEIGHT_SM);
       }
     };
 
@@ -66,9 +73,17 @@ export const HighlightsCarousel = () => {
       window.removeEventListener('resize', handleSetCardSize);
   }, []);
 
+  // Auto-move carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleMove(1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [testimonials]);
+
   return (
     <div
-      className="relative w-full overflow-hidden h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] mt-7 md:mt-12"
+      className="relative w-full overflow-hidden h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px]"
       // style={{
       //   height: SECTION_HEIGHT,
       // }}
@@ -88,19 +103,20 @@ export const HighlightsCarousel = () => {
             testimonial={t}
             handleMove={handleMove}
             position={position}
-            cardSize={cardSize}
+            cardWidth={cardWidth}
+            cardHeight={cardHeight}
           />
         );
       })}
       <div className="absolute bottom-4 md:bottom-12 left-1/2 flex -translate-x-1/2 gap-8 z-20">
         <button
           onClick={() => handleMove(-1)}
-          className="grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white">
+          className="grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white rounded-full">
           <GoArrowLeft />
         </button>
         <button
           onClick={() => handleMove(1)}
-          className="grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white">
+          className="grid h-14 w-14 place-content-center text-3xl transition-colors hover:bg-black hover:text-white rounded-full">
           <GoArrowRight />
         </button>
       </div>
@@ -112,14 +128,16 @@ interface TestimonialProps {
   position: number;
   testimonial: TestimonialType;
   handleMove: (position: number) => void;
-  cardSize: number;
+  cardWidth: number;
+  cardHeight: number;
 }
 
 const TestimonialCard = ({
   position,
   testimonial,
   handleMove,
-  cardSize,
+  cardWidth,
+  cardHeight,
 }: TestimonialProps) => {
   const isActive = position === 0;
 
@@ -132,9 +150,9 @@ const TestimonialCard = ({
         isActive ? 'z-10' : 'z-0'
       }`}
       animate={{
-        width: cardSize,
-        height: cardSize,
-        x: `calc(-50% + ${position * (cardSize / 1.5)}px)`,
+        width: cardWidth,
+        height: cardHeight,
+        x: `calc(-50% + ${position * (cardWidth / 1.5)}px)`,
         y: `calc(-50% + ${
           isActive
             ? CENTER_STAGGER
@@ -159,6 +177,7 @@ const TestimonialCard = ({
         alt="Tour Image"
         width={1020}
         height={680}
+        className="w-full h-full object-cover"
       />
     </motion.div>
   );

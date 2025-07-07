@@ -53,7 +53,6 @@ function Footnote() {
                 <li>• Aburi Botanical Gardens</li>
                 <li>• Akosombo Dam</li>
                 <li>• Boti Falls</li>
-                <li>• Shai Hills Resource Reserve</li>
               </ul>
             </div>
 
