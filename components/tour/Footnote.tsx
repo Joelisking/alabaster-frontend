@@ -62,9 +62,9 @@ function Footnote() {
               </h4>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>• Bui National Park</li>
-                <li>• Banda Cultural Landscape</li>
+                <li>• Duasidan Monkey Sanctuary</li>
                 <li>• Sunyani Cultural Center</li>
-                <li>• Traditional Craft Villages</li>
+                <li>• Nchiraa Waterfalls</li>
               </ul>
             </div>
 
@@ -87,7 +87,7 @@ function Footnote() {
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>• Techiman Market</li>
                 <li>• Kintampo Waterfalls</li>
-                <li>• Traditional Medicine</li>
+                <li>• Boabeng Fiema Monkey Sanctuary</li>
                 <li>• Cultural Heritage Sites</li>
               </ul>
             </div>
