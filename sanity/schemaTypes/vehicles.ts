@@ -66,7 +66,7 @@ export default {
     },
     {
       name: 'tripTypes',
-      title: 'Trip Types & Pricing',
+      title: 'Trip Types',
       type: 'array',
       of: [
         {
@@ -87,29 +87,40 @@ export default {
                 }),
               },
             },
-            {
-              name: 'price',
-              title: 'Price (USD)',
-              type: 'number',
-              description: 'Price in US Dollars',
-              validation: (Rule: any) => Rule.required().min(0),
-            },
           ],
           preview: {
             select: {
               title: 'tripType.name',
-              price: 'price',
             },
-            prepare(selection: {title?: string; price?: number}) {
-              const {title, price} = selection
+            prepare(selection: {title?: string}) {
+              const {title} = selection
               return {
                 title: title || 'No trip type selected',
-                subtitle: price ? `USD ${price}` : 'No price set',
               }
             },
           },
         },
       ],
+    },
+    {
+      name: 'priceRange',
+      title: 'Price Range (USD)',
+      type: 'object',
+      fields: [
+        {
+          name: 'min',
+          title: 'Minimum Price',
+          type: 'number',
+          validation: (Rule: any) => Rule.required().min(0),
+        },
+        {
+          name: 'max',
+          title: 'Maximum Price',
+          type: 'number',
+          validation: (Rule: any) => Rule.required().min(0),
+        },
+      ],
+      description: 'Specify the price range for this vehicle in US Dollars',
     },
     {
       name: 'accessories',

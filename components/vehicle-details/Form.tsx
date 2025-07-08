@@ -81,10 +81,14 @@ function Form({ tripTypes }: FormProps) {
         name="tripType"
         type="select"
         placeholder="Select trip type"
-        options={tripTypes.map((t) => ({
-          value: t.tripType._id as string,
-          label: t.tripType.name as string,
-        }))}
+        options={
+          Array.isArray(tripTypes) && tripTypes.length > 0
+            ? tripTypes.map((t) => ({
+                value: t.tripType._id as string,
+                label: t.tripType.name as string,
+              }))
+            : []
+        }
         register={register}
         errors={errors}
       />

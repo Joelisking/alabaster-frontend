@@ -9,6 +9,7 @@ export const FLEET_QUERY = `*[_type == 'vehicle'] {
     mainImage,
     vehicleDetails,
     tripTypes,
+    priceRange,
     category->{_id, title, description},
     "currentSlug": slug.current,
   }`;

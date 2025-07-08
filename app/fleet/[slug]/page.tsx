@@ -44,9 +44,9 @@ async function getData(id: string) {
       _id,
       name,
       description
-    },
-    price
+    }
   },
+  priceRange,
   accessories[]->{
     _id,
     name,
@@ -80,7 +80,10 @@ async function VehicleDetails({
   const fleet: IVehicle = await getData(slug);
 
   // Default selected trip type
-  const defaultTripTypeId = fleet.tripTypes[0]?.tripType._id || '';
+  const defaultTripTypeId =
+    Array.isArray(fleet.tripTypes) && fleet.tripTypes.length > 0
+      ? fleet.tripTypes[0]?.tripType._id
+      : '';
 
   return (
     <main>
@@ -161,6 +164,7 @@ async function VehicleDetails({
                 tripTypes={fleet.tripTypes}
                 defaultValue={defaultTripTypeId}
                 globalSettings={globalSettings}
+                priceRange={fleet.priceRange}
               />
             </div>
 

@@ -11,7 +11,6 @@ export interface TripTypePricing {
     name?: string;
     description?: string;
   };
-  price: number;
 }
 
 export interface IFleetCard {
@@ -24,6 +23,10 @@ export interface IFleetCard {
     seats: number;
   };
   tripTypes: TripTypePricing[];
+  priceRange: {
+    min: number;
+    max: number;
+  };
   currentSlug: string;
   category: CategoryReference;
 }
@@ -55,6 +58,10 @@ export interface IVehicle {
   };
   description?: string;
   tripTypes: TripTypePricing[];
+  priceRange: {
+    min: number;
+    max: number;
+  };
   accessories?: AccessoryReference[];
   category?: CategoryReference;
   slug: {

@@ -13,21 +13,16 @@ interface FleetProps {
 function FleetCard({ data, globalSettings }: FleetProps) {
   const router = useRouter();
 
-  // Get prices in display currency
   const getDisplayPrices = () => {
-    if (!data.tripTypes?.length) return { min: 0, max: 0 };
-
-    const prices = data.tripTypes.map((t) => {
-      if (globalSettings.displayCurrency === 'GHS') {
-        return t.price * globalSettings.exchangeRate;
-      }
-      return t.price;
-    });
-
-    return {
-      min: Math.min(...prices),
-      max: Math.max(...prices),
-    };
+    if (!data.priceRange) return { min: 0, max: 0 };
+    const { min, max } = data.priceRange;
+    if (globalSettings.displayCurrency === 'GHS') {
+      return {
+        min: min * globalSettings.exchangeRate,
+        max: max * globalSettings.exchangeRate,
+      };
+    }
+    return { min, max };
   };
 
   const { min, max } = getDisplayPrices();

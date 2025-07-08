@@ -10,12 +10,17 @@ interface TripTypeSelectorProps {
   tripTypes: TripTypePricing[];
   defaultValue: string;
   globalSettings: GlobalSettings;
+  priceRange: {
+    min: number;
+    max: number;
+  };
 }
 
 export default function TripTypeSelector({
   tripTypes,
   defaultValue,
   globalSettings,
+  priceRange,
 }: TripTypeSelectorProps) {
   const [selectedTripType, setSelectedTripType] =
     useState(defaultValue);
@@ -31,13 +36,17 @@ export default function TripTypeSelector({
     globalSettings.displayCurrency === 'GHS' ? 'GH₵' : '$';
 
   // Find the selected trip type object (for Select scenario)
-  const selectedType = tripTypes.find(
-    (type: TripTypePricing) => type.tripType._id === selectedTripType
-  );
+  const selectedType =
+    Array.isArray(tripTypes) && tripTypes.length > 0
+      ? tripTypes.find(
+          (type: TripTypePricing) =>
+            type.tripType._id === selectedTripType
+        )
+      : null;
 
   return (
     <>
-      {tripTypes.length > 2 ? (
+      {Array.isArray(tripTypes) && tripTypes.length > 2 ? (
         // Use Select for more than 2 trip types
         <div className="w-full mt-4">
           <TripTypeSelect
@@ -63,13 +72,35 @@ export default function TripTypeSelector({
                 </span>
                 <div className="flex flex-col mt-5">
                   <span className="text-primary text-3xl lg:text-5xl font-bold z-30">
-                    {currencySymbol}
-                    {getDisplayPrice(
-                      selectedType.price
-                    ).toLocaleString(undefined, {
-                      minimumFractionDigits: 2,
-                      maximumFractionDigits: 2,
-                    })}
+                    {priceRange.min === priceRange.max ? (
+                      <>
+                        {currencySymbol}
+                        {getDisplayPrice(
+                          priceRange.min
+                        ).toLocaleString(undefined, {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}
+                      </>
+                    ) : (
+                      <>
+                        {currencySymbol}
+                        {getDisplayPrice(
+                          priceRange.min
+                        ).toLocaleString(undefined, {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}
+                        {' - '}
+                        {currencySymbol}
+                        {getDisplayPrice(
+                          priceRange.max
+                        ).toLocaleString(undefined, {
+                          minimumFractionDigits: 2,
+                          maximumFractionDigits: 2,
+                        })}
+                      </>
+                    )}
                   </span>
                   <span className="text-white text-3xl lg:text-5xl font-bold">
                     /per day
@@ -79,7 +110,7 @@ export default function TripTypeSelector({
             )}
           </div>
         </div>
-      ) : (
+      ) : Array.isArray(tripTypes) && tripTypes.length > 0 ? (
         // Use Tabs for 2 or fewer trip types
         <Tabs
           defaultValue={defaultValue}
@@ -114,13 +145,35 @@ export default function TripTypeSelector({
                   </span>
                   <div className="flex flex-col mt-5">
                     <span className="text-primary text-3xl lg:text-5xl font-bold z-30">
-                      {currencySymbol}
-                      {getDisplayPrice(
-                        type.price // Use current type's price
-                      ).toLocaleString(undefined, {
-                        minimumFractionDigits: 2,
-                        maximumFractionDigits: 2,
-                      })}
+                      {priceRange.min === priceRange.max ? (
+                        <>
+                          {currencySymbol}
+                          {getDisplayPrice(
+                            priceRange.min
+                          ).toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                        </>
+                      ) : (
+                        <>
+                          {currencySymbol}
+                          {getDisplayPrice(
+                            priceRange.min
+                          ).toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                          {' - '}
+                          {currencySymbol}
+                          {getDisplayPrice(
+                            priceRange.max
+                          ).toLocaleString(undefined, {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2,
+                          })}
+                        </>
+                      )}
                     </span>
                     <span className="text-white text-3xl lg:text-5xl font-bold">
                       /per day
@@ -131,6 +184,53 @@ export default function TripTypeSelector({
             ))}
           </div>
         </Tabs>
+      ) : (
+        <div className="w-full mt-4">
+          <div className="bg-card-foreground rounded-2xl px-9 pt-4 pb-8 relative z-10">
+            <span className="text-white text-sm">
+              No trip types available for this vehicle.
+            </span>
+            <div className="flex flex-col mt-5">
+              <span className="text-primary text-3xl lg:text-5xl font-bold z-30">
+                {priceRange.min === priceRange.max ? (
+                  <>
+                    {currencySymbol}
+                    {getDisplayPrice(priceRange.min).toLocaleString(
+                      undefined,
+                      {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      }
+                    )}
+                  </>
+                ) : (
+                  <>
+                    {currencySymbol}
+                    {getDisplayPrice(priceRange.min).toLocaleString(
+                      undefined,
+                      {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      }
+                    )}
+                    {' - '}
+                    {currencySymbol}
+                    {getDisplayPrice(priceRange.max).toLocaleString(
+                      undefined,
+                      {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2,
+                      }
+                    )}
+                  </>
+                )}
+              </span>
+              <span className="text-white text-3xl lg:text-5xl font-bold">
+                /per day
+              </span>
+            </div>
+          </div>
+        </div>
       )}
     </>
   );
