@@ -30,7 +30,7 @@ export const faqItems = [
   {
     id: 'item-1',
     title:
-      'What types of vehicles does your car rental service offer?',
+      'What type of vehicles does your car rental service offer?',
     content:
       'We offer a diverse fleet, including saloon cars, large coach-type buses, medium-size buses, mini-buses/vans, and Toyota Prado/V8-VX 4×4 SUVs.',
   },
