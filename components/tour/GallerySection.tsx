@@ -29,11 +29,6 @@ const GallerySection = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
             Our <span className="text-primary">Tour Gallery</span>
           </h2>
-
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A glimpse into our memorable tour with guests from
-            Trinidad and Tobago exploring the beauty of Ghana.
-          </p>
         </div>
         <Gallery
           images={galleryImages.map((src, idx) => ({
