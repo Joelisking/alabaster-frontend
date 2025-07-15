@@ -102,3 +102,10 @@ export interface Region {
   }[];
   icon?: React.ReactNode;
 }
+
+export interface GalleryImage {
+  src: string;
+  alt?: string;
+  caption?: string;
+  category?: string;
+}
