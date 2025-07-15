@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import Container from '../shared/container';
 import { Gallery } from '../gallery/gallery-grids';
 

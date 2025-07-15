@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import { GalleryImage } from '@/lib/types';
 import { useEffect } from 'react';
 
