@@ -19,6 +19,15 @@ const galleryImages = [
   '/tour/gallery/photo14.jpeg',
   '/tour/gallery/photo15.jpeg',
   '/tour/gallery/photo16.jpeg',
+  '/tour/gallery/photo17.jpeg',
+  '/tour/gallery/photo18.jpeg',
+  '/tour/gallery/photo19.jpeg',
+  '/tour/gallery/photo20.jpeg',
+  '/tour/gallery/photo21.jpeg',
+  '/tour/gallery/photo22.jpeg',
+  '/tour/gallery/photo23.jpeg',
+  '/tour/gallery/photo24.jpeg',
+  '/tour/gallery/photo25.jpeg',
 ];
 
 const GallerySection = () => {
