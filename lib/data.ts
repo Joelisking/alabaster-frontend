@@ -1,7 +1,7 @@
 import { ITestimonial, Region } from './types';
 
 export const stats = [
-  { id: 1, title: 'years in business', subText: '23+' },
+  { id: 1, title: 'years in business', subText: '25+' },
   { id: 2, title: 'fleet of cars', subText: '50+' },
   { id: 3, title: 'successful trips', subText: '5000+' },
   { id: 4, title: 'satisfied clients', subText: '5000+' },
