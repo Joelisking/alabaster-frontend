@@ -11,6 +11,22 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/al/page.php',
+        has: [
+          {
+            type: 'query',
+            key: 'type',
+            value: 'aboutus',
+          },
+        ],
+        destination: '/about',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
