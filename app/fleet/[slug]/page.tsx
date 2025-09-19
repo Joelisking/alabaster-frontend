@@ -5,10 +5,12 @@ import { client } from '@/lib/sanity';
 import { GlobalSettings, IVehicle } from '@/lib/types';
 import Form from '@/components/vehicle-details/Form';
 import TripTypeSelector from '@/components/vehicle-details/trip-type-selector';
-
-export const revalidate = 0;
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getData(id: string) {
+  // Force dynamic rendering for this page only
+  noStore();
+
   const query = `
     *[_type == 'vehicle' && slug.current == '${id}'][0] {
   _id,
@@ -61,13 +63,13 @@ async function getData(id: string) {
     current
   }
 }`;
-  const data = await client.fetch(query, {}, { cache: 'no-store' });
+  const data = await client.fetch(query);
   return data;
 }
 
 async function getGlobalSettings() {
   const query = `*[_type == "globalSettings"][0] { exchangeRate, displayCurrency }`;
-  return await client.fetch(query, {}, { cache: 'no-store' });
+  return await client.fetch(query);
 }
 
 async function VehicleDetails({

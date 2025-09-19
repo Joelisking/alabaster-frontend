@@ -3,11 +3,15 @@ import FleetCard from './FleetCard';
 import { client } from '@/lib/sanity';
 import { IFleetCard } from '@/lib/types';
 import { FLEET_QUERY, GLOBAL_SETTINGS_QUERY } from '@/lib/queries';
+import { unstable_noStore as noStore } from 'next/cache';
 
 async function getData() {
+  // Force dynamic rendering for this component only
+  noStore();
+
   const [fleet, globalSettings] = await Promise.all([
-    client.fetch(FLEET_QUERY, {}, { cache: 'no-store' }),
-    client.fetch(GLOBAL_SETTINGS_QUERY, {}, { cache: 'no-store' }),
+    client.fetch(FLEET_QUERY),
+    client.fetch(GLOBAL_SETTINGS_QUERY),
   ]);
   return { fleet, globalSettings };
 }
