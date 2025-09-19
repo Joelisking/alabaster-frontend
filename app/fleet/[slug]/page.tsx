@@ -6,7 +6,7 @@ import { GlobalSettings, IVehicle } from '@/lib/types';
 import Form from '@/components/vehicle-details/Form';
 import TripTypeSelector from '@/components/vehicle-details/trip-type-selector';
 
-export const revalidate = 60;
+export const revalidate = 0;
 
 async function getData(id: string) {
   const query = `
@@ -61,13 +61,13 @@ async function getData(id: string) {
     current
   }
 }`;
-  const data = await client.fetch(query);
+  const data = await client.fetch(query, {}, { cache: 'no-store' });
   return data;
 }
 
 async function getGlobalSettings() {
   const query = `*[_type == "globalSettings"][0] { exchangeRate, displayCurrency }`;
-  return await client.fetch(query);
+  return await client.fetch(query, {}, { cache: 'no-store' });
 }
 
 async function VehicleDetails({

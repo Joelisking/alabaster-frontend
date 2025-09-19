@@ -6,6 +6,8 @@ import Shuttle from '@/components/home/Shuttle';
 import Stats from '@/components/home/Stats';
 import Testimonials from '@/components/home/testimonials';
 
+export const revalidate = 0;
+
 function Home() {
   return (
     <main>
