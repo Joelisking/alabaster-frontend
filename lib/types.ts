@@ -43,6 +43,11 @@ interface CategoryReference {
   description?: string;
 }
 
+export interface CategoryOption {
+  _id: string;
+  title: string;
+}
+
 export interface IVehicle {
   _id: string;
   _type: 'vehicle';

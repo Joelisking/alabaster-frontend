@@ -4,6 +4,9 @@ import './globals.css';
 import Navbar from '@/components/navbar';
 import WhatsAppButton from '@/components/whatsapp-button';
 import Footer from '@/components/footer';
+import { client } from '@/lib/sanity';
+import { CATEGORIES_QUERY } from '@/lib/queries';
+import { CategoryOption } from '@/lib/types';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -17,11 +20,15 @@ export const metadata: Metadata = {
     'We offer chauffer driven car rentals, corporate shuttle services and tours in Ghana. We operate a vast fleet of vehicles ranging from sedans, SUVs, mini-vans and buses. Our office is located at Granada Hotel, within the Accra Polo Court catchment area, Liberation Road, just about a five-minute drive from the Kotoka International Airport (KIA) in Accra. Your next road adventure begins with Alabaster Car Rentals - We are Swift, Safe & Reliable!',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const categories = await client.fetch<CategoryOption[]>(
+    CATEGORIES_QUERY
+  );
+
   return (
     <html lang="en" className={manrope.variable}>
       <body className={`antialiased`}>
@@ -30,7 +37,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
-        <WhatsAppButton />
+        <WhatsAppButton categories={categories} />
       </body>
     </html>
   );

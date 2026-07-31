@@ -3,8 +3,15 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { formSchema, FormSchema } from './formSchema';
 import FormField from './FormField';
+import { CategoryOption } from '@/lib/types';
 
-function Form() {
+const OTHER_VEHICLE_OPTION = 'Other / not sure';
+
+interface FormProps {
+  categories?: CategoryOption[];
+}
+
+function Form({ categories = [] }: FormProps) {
   const {
     register,
     handleSubmit,
@@ -21,6 +28,9 @@ function Form() {
       `*Name:* ${data.name}\n` +
       `*Email:* ${data.email}\n` +
       `*Phone:* ${data.phone}\n` +
+      (data.vehicleType
+        ? `*Vehicle of interest:* ${data.vehicleType}\n`
+        : '') +
       (data.subject ? `*Subject:* ${data.subject}\n` : '') +
       `*Message:* ${data.message}`;
 
@@ -67,6 +77,27 @@ function Form() {
           register={register}
           errors={errors}
         />
+        <div className="flex flex-col gap-3 mb-6">
+          <div className="relative">
+            <select
+              id="vehicleType"
+              defaultValue=""
+              className="appearance-none bg-transparent focus:ring-0 active:ring-0 focus:outline-none border-b border-muted-foreground focus:border-primary active:border-primary w-full transition-all duration-300 pb-2 pr-8 text-[#C1C1C1] [&:valid]:text-white [&>option]:text-black"
+              {...register('vehicleType')}>
+              <option value="" disabled>
+                Kind of vehicle (Optional)
+              </option>
+              {categories.map((category) => (
+                <option key={category._id} value={category.title}>
+                  {category.title}
+                </option>
+              ))}
+              <option value={OTHER_VEHICLE_OPTION}>
+                {OTHER_VEHICLE_OPTION}
+              </option>
+            </select>
+          </div>
+        </div>
         <FormField
           name="subject"
           placeholder="Subject (Optional)"
