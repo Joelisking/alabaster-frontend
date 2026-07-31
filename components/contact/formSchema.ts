@@ -6,6 +6,7 @@ export const formSchema = z.object({
   phone: z
     .string()
     .min(10, 'Phone number must be at least 10 digits'),
+  vehicleType: z.string().optional(),
   subject: z.string().optional(),
   message: z.string().min(1, 'Message is required'),
 });

@@ -3,6 +3,11 @@ export const GLOBAL_SETTINGS_QUERY = `*[_type == "globalSettings"][0] {
     displayCurrency
   }`;
 
+export const CATEGORIES_QUERY = `*[_type == "category"] | order(title asc) {
+    _id,
+    title
+  }`;
+
 export const FLEET_QUERY = `*[_type == 'vehicle'] {
     _id,
     title,

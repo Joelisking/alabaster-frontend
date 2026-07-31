@@ -13,11 +13,28 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import Image from 'next/image';
 import img from '@/public/popover-header.png';
 import { Icon } from './ui';
+import { CategoryOption } from '@/lib/types';
 
-export default function WhatsAppContact() {
+interface WhatsAppContactProps {
+  categories?: CategoryOption[];
+}
+
+const OTHER_VEHICLE_OPTION = 'Other / not sure';
+
+export default function WhatsAppContact({
+  categories = [],
+}: WhatsAppContactProps) {
+  const [vehicleType, setVehicleType] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [open, setOpen] = useState(false);
@@ -28,7 +45,9 @@ export default function WhatsAppContact() {
   const whatsappNumber = '233538237772';
 
   const handleSend = () => {
-    const formattedMessage = `${subject}: ${message}`;
+    const formattedMessage =
+      (vehicleType ? `Vehicle of interest: ${vehicleType}\n` : '') +
+      `${subject}: ${message}`;
     const encodedMessage = encodeURIComponent(formattedMessage);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     window.open(whatsappUrl, '_blank');
@@ -36,6 +55,7 @@ export default function WhatsAppContact() {
     setStep(1); // Reset to first step
 
     // Reset form
+    setVehicleType('');
     setSubject('');
     setMessage('');
   };
@@ -133,6 +153,30 @@ export default function WhatsAppContact() {
                 Contact Us on WhatsApp
               </h3>
 
+              <div className="space-y-2">
+                <Label htmlFor="vehicleType">
+                  Kind of vehicle
+                </Label>
+                <Select
+                  value={vehicleType}
+                  onValueChange={setVehicleType}>
+                  <SelectTrigger id="vehicleType" className="w-full">
+                    <SelectValue placeholder="Select a vehicle type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {categories.map((category) => (
+                      <SelectItem
+                        key={category._id}
+                        value={category.title}>
+                        {category.title}
+                      </SelectItem>
+                    ))}
+                    <SelectItem value={OTHER_VEHICLE_OPTION}>
+                      {OTHER_VEHICLE_OPTION}
+                    </SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="subject">Subject</Label>
                 <Input
