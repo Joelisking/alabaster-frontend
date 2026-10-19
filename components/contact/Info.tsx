@@ -35,14 +35,16 @@ function Info() {
               Office Location:
             </span>
             <span className="font-light">
-              Polo Court, Liberation Road, Accra
+              Ghana Book Trust premises, 16 IPS Road, Accra
+              (Digital Address: GA-546-4868)
             </span>
           </div>
         </div>
 
         <div className="mt-4 sm:mt-6 aspect-video rounded-xl overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.666498189222!2d-0.17791992370661844!3d5.616166794364841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9b10f62ca0d1%3A0xffad64a9769e94aa!2sAlabaster%20Car%20Rentals%20and%20Tours%20Ltd!5e0!3m2!1sen!2sgh!4v1745503179033!5m2!1sen!2sgh"
+            src="https://www.google.com/maps?q=Ghana+Book+Trust,+16+IPS+Road,+Accra&output=embed"
+            title="Alabaster office location map"
             width="100%"
             height="100%"
             className="w-full h-full"

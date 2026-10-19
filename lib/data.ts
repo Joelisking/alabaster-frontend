@@ -38,7 +38,7 @@ export const faqItems = [
     id: 'item-2',
     title: 'How can I make a reservation?',
     content:
-      'You can easily make a reservation through our website, contact our customer service, or visit our office at Polo Court, Liberation Road, Accra.',
+      'You can easily make a reservation through our website, contact our customer service, or visit our office at the Ghana Book Trust premises, 16 IPS Road, Accra (Digital Address: GA-546-4868).',
   },
   {
     id: 'item-3',

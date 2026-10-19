@@ -23,10 +23,8 @@ function Story() {
           </div>
           <div className="bg-white p-4">
             <p>
-              Our office is located at Granada Hotel, within the Polo
-              Court catchment area, Liberation Road, just about a
-              five-minute drive from the Kotoka International Airport
-              (KIA) in Accra.
+              Our office is located at the Ghana Book Trust premises,
+              16 IPS Road, Accra (Digital Address: GA-546-4868).
             </p>
           </div>
           <div className="bg-white p-4">
