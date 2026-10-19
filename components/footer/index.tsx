@@ -44,8 +44,9 @@ function Footer() {
 
             <div className="mt-4 md:mt-6 text-[#D0D0C8] space-y-1 md:space-y-3">
               <span className="block">
-                Polo Court, Liberation Road, Accra
+                Ghana Book Trust premises, 16 IPS Road, Accra
               </span>
+              <span className="block">Digital Address: GA-546-4868</span>
               <div className="flex flex-col">
                 <span className="text-lg md:text-xl">8am—5pm</span>
                 <span>/ Everyday</span>

@@ -24,10 +24,9 @@ function HelpBanner() {
                 We offer chauffer driven car rentals, corporate
                 shuttle services and tours in Ghana. We operate a vast
                 fleet of vehicles ranging from sedans, SUVs, mini-vans
-                and buses. Our office is located at Granada Hotel,
-                within the Accra Polo Court catchment area, Liberation
-                Road, just about a five-minute drive from the Kotoka
-                International Airport (KIA) in Accra. Your next road
+                and buses. Our office is located at the Ghana Book
+                Trust premises, 16 IPS Road, Accra (Digital Address:
+                GA-546-4868). Your next road
                 adventure begins with Alabaster Car Rentals -
                 We&apos;re Swift, Safe & Reliable!
               </p>
